@@ -1,0 +1,247 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: #fff;
+  h2 {
+    cursor: pointer;
+    padding: 15px;
+  }
+}
+
+.spinner {
+  height: 80px;
+  margin: auto;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/* new css for movie component */
+
+* {
+  box-sizing: border-box;
+}
+
+.movies {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.add-movies {
+  text-align: center;
+}
+
+.add-movies button {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 10px 30px 10px;
+}
+
+.movie {
+  font-size: 15px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+  max-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &.active {
+    .movie-details,
+    .movie-title {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  h2 {
+    font-weight: 400;
+  }
+  img {
+    transition-duration: 0.5s, 0.3s;
+    height: 280px;
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    img {
+      transform: scale(1.08);
+    }
+  }
+  .movie-title {
+    transform: translateY(15px);
+    transition-duration: 0.5s;
+  }
+  .movie-details {
+    transform: translateY(40px);
+    transition-duration: 0.5s;
+    opacity: 0;
+  }
+}
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.search-icon {
+  cursor: pointer;
+  width: 59.5px;
+  height: 59.5px;
+  background: url("./assets/search-icon.png") center center no-repeat;
+}
+
+.container {
+  padding: 15px;
+  font-size: 17px;
+  display: block;
+  max-width: 100%;
+  outline: none;
+}
+
+.search-container {
+  background-color: #fff;
+  overflow: hidden;
+  float: right;
+  height: 4em;
+
+  width: 4em;
+  border-radius: 2em;
+  box-shadow: 0 0 5px #6a5d4f;
+  -moz-transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+}
+.search-container:hover,
+.search-container:focus,
+.search-container:focus-within {
+  width: 25em;
+  border-radius: 5px 2em 2em 5px;
+  outline: none;
+}
+.search-container:hover input,
+.search-container:focus input,
+.search-container:focus-within input {
+  display: inline-block;
+  width: 19em;
+  padding: 10px;
+}
+
+input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  float: left;
+  width: 0em;
+  height: 2em;
+  margin: 1em;
+  margin-right: -4.5em;
+  background: #fff;
+  color: #6a5d4f;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25),
+    0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.button {
+  float: right;
+  width: 1.75em;
+  height: 1.75em;
+  margin: 0.125em;
+  background: #282c34;
+  text-align: center;
+  font-size: 2em;
+  color: #fdf6e3;
+  border-radius: 50%;
+  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25),
+    0 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -2px 1px rgba(0, 0, 0, 0.3);
+}
+.button i {
+  margin-top: 0.3em;
+}
+.button:active {
+  border: 0 !important;
+  text-shadow: 0 0 0;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  width: 80px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #282c34;
+  color: antiquewhite;
+}
+
+.search > input[type="text"] {
+  width: 40%;
+  min-width: 170px;
+}
+
+@media screen and (min-width: 694px) and (max-width: 915px) {
+}
+
+@media screen and (min-width: 652px) and (max-width: 693px) {
+}
+
+@media screen and (max-width: 651px) {
+  .App-header {
+    flex-direction: column;
+    h2 {
+      padding-bottom: 0;
+    }
+  }
+  .container {
+    font-size: 14px;
+  }
+  .search-icon {
+    cursor: pointer;
+    width: 49px;
+    height: 49px;
+  }
+}
