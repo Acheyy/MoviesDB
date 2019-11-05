@@ -1,19 +1,10 @@
-import React, {useReducer} from "react";
+import React from "react";
 import Search from "./Search";
-import reducer from "../reducers/movies";
-import { getMoviesBySearch } from './../actions/movies';
 
-
-const Header = props => {
-  const [_, dispatch] = useReducer(reducer);
-
-  const search = searchValue => {
-    getMoviesBySearch(searchValue, dispatch);
-  };
-
+const Header = ({ search, text }) => {
   return (
     <header className="App-header">
-      <h2>{props.text}</h2>
+      <h2>{text}</h2>
       <Search search={search} />
     </header>
   );

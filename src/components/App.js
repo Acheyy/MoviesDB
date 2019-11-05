@@ -3,8 +3,9 @@ import "../App.scss";
 import Header from "./Header";
 import MovieList from "./MovieList";
 import reducer from "../reducers/movies";
+import { getMoviesBySearch } from "./../actions/movies";
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=toe&apikey=4a3b711b";
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=top&apikey=4a3b711b";
 
 const initialState = {
   loading: true,
@@ -27,12 +28,15 @@ const App = () => {
       });
   }, []);
 
+  const searchHeaderValue = searchValue => {
+    getMoviesBySearch(searchValue, dispatch);
+  };
+
   const { movies, loading } = state;
-  console.log("---", movies);
 
   return (
     <main className="App">
-      <Header text="MovieDB" />
+      <Header text="MovieDB" search={searchHeaderValue} />
 
       <div className="movies">
         {loading && !errorMessage ? (

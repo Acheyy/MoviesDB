@@ -88,6 +88,7 @@
     }
   }
   .movie-title {
+    padding: 5px;
     transform: translateY(15px);
     transition-duration: 0.5s;
   }
@@ -128,14 +129,14 @@
 }
 
 .search-container {
-  background-color: #fff;
+  background-color: #282c34;
   overflow: hidden;
   float: right;
   height: 4em;
+  border: 1px solid #343840;
 
   width: 4em;
   border-radius: 2em;
-  box-shadow: 0 0 5px #6a5d4f;
   -moz-transition: all 0.35s;
   -webkit-transition: all 0.35s;
 }
@@ -160,28 +161,28 @@ input {
   appearance: none;
   float: left;
   width: 0em;
-  height: 2em;
-  margin: 1em;
+  height: 3em;
+  margin: 0.5em;
   margin-right: -4.5em;
-  background: #fff;
-  color: #6a5d4f;
+  background: #282c34;
+  color: rgb(197, 197, 197);
   font-size: 1em;
   font-weight: 600;
-  padding: 0px;
+  padding-bottom: 3px !important;
   border: 0;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   -moz-transition: all 0.25s;
   -webkit-transition: all 0.25s;
+  border-bottom: 1px solid #282c34 !important;
 }
 input:focus {
   outline: none;
-  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25),
-    0 1px 5px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #808080 !important;
 }
 
 .button {
+  transition-duration: 0.3s;
   float: right;
   width: 1.75em;
   height: 1.75em;
@@ -194,6 +195,11 @@ input:focus {
   box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25),
     0 1px 1px rgba(0, 0, 0, 0.25);
   text-shadow: 0 -2px 1px rgba(0, 0, 0, 0.3);
+  &:hover {
+    transform: rotate(45deg);
+    transition-duration: 0.3s;
+    background: #474c57;
+  }
 }
 .button i {
   margin-top: 0.3em;
